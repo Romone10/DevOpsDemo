@@ -65,7 +65,7 @@
         ["xpath=//div[@id='myModal']/div/path-form/div/form/div[2]/div/span/span/path-textfield/span/div/input", "xpath:idRelative"],
         ["xpath=//span/div/input", "xpath:position"]
       ],
-      "value": "This is a test."
+      "value": "A unique 71382 String!"
     }, {
       "id": "9fae656b-2a71-4fa9-a8b6-cb2a096fdec6",
       "comment": "",
@@ -101,7 +101,7 @@
         ["xpath=//path-framework[@id='app']/path-application/div/div/div/div/div/span[3]/span/span/path-list/span/span/div/div/form/input", "xpath:idRelative"],
         ["xpath=//form/input", "xpath:position"]
       ],
-      "value": "This is a test."
+      "value": "A unique 71382 String!"
     }, {
       "id": "31c1d4cb-9ab2-4b35-86dd-ce8dca00ab43",
       "comment": "",
