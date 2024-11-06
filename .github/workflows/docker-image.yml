@@ -1,4 +1,4 @@
-name: azure docker deployment
+name: Docker Hub & Azure Deployment
 
 on:
   workflow_dispatch:
