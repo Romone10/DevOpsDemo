@@ -1,0 +1,2 @@
+baseUrl: "http://devopsdemo:8080"
+server: "http://localhost:4444/"

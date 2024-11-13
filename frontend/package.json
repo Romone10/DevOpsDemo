@@ -23,7 +23,8 @@
   },
   "scripts": {
     "start": "serve",
-    "test": "npx selenium-side-runner --output-directory=./tests/test-reports tests/test.side"
+    "test-local": "npx selenium-side-runner --no-sideyml --output-directory=./tests/test-reports tests/test.side",
+    "test-container": "npx selenium-side-runner -w 10 --output-directory=./tests/test-reports tests/test.side --config-file tests/docker-config.yml"
   },
   "dependencies": {
     "path-framework": "0.8.0-beta.8",
