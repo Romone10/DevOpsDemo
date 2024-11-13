@@ -23,9 +23,8 @@
   },
   "scripts": {
     "start": "serve",
-    "test-local": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports",
-    "test-grid-chrome": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/local-selenium-chrome.yml",
-    "test-grid-firefox": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/local-selenium-firefox.yml",
+    "test-local-chrome": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/local-selenium-chrome.yml",
+    "test-local-firefox": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/local-selenium-firefox.yml",
     "test-jenkins-chrome": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/jenkins-selenium-chrome.yml",
     "test-jenkins-firefox": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/jenkins-selenium-firefox.yml"
   },

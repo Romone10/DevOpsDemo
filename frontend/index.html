@@ -22,8 +22,8 @@
     } else {
       resultUrl = url + "/services";
     }
-    if (resultUrl.includes("localhost")) {
-      resultUrl = resultUrl.replace("localhost:3000", "localhost:8080");
+    if (resultUrl.includes("localhost") || resultUrl.includes("host.docker.internal")) {
+      resultUrl = resultUrl.replace(":3000", ":8080");
     }
     document.getElementById('app').setAttribute("backend-url", resultUrl);
   </script>
