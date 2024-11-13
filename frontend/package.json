@@ -18,7 +18,7 @@
     "url": "https://github.com/devopszhaw/DevOps-04-DevOpsDemo.git"
   },
   "engines": {
-    "node": ">=20",
+    "node": ">=22",
     "npm": ">=10"
   },
   "scripts": {
@@ -34,7 +34,7 @@
     "serve": "14.2.4"
   },
   "devDependencies": {
-    "chromedriver": "^130.0.2",
-    "selenium-side-runner": "^4.0.12"
+    "chromedriver": "130.0.2",
+    "selenium-side-runner": "4.0.12"
   }
 }
