@@ -25,7 +25,8 @@
     "start": "serve",
     "test-local": "npx selenium-side-runner --no-sideyml tests/test.side --output-directory=./tests/test-reports",
     "test-grid-chrome": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/selenium-chrome-config.yml",
-    "test-grid-firefox": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/selenium-firefox-config.yml"
+    "test-grid-firefox": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/selenium-firefox-config.yml",
+    "test-jenkins-grid-firefox": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/selenium-jenkins-firefox-config.yml"
   },
   "dependencies": {
     "path-framework": "0.8.0-beta.8",
