@@ -2,8 +2,6 @@
 .recommenders
 RemoteSystemsTempFiles
 .gradle
-/frontend/node_modules
-**/test-reports/*
 
 HELP.md
 .gradle
@@ -44,3 +42,10 @@ out/
 ### VS Code ###
 .vscode/
 cov.xml
+
+## DevOpsDemo
+/frontend/node_modules
+/frontend/tests/test-reports/*
+/frontend/tests/videos/*
+
+
