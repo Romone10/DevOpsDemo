@@ -3,3 +3,4 @@ capabilities:
   se:name: "chrome"
 baseUrl: "http://devopsdemo:8080"
 server: "http://selenium-hub:4444/"
+output-format: junit
