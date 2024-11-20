@@ -36,7 +36,5 @@ jacocoTestReport {
 	reports {
 		xml.required = true
 		html.required = true
- 		xml.destination(file("${rootProject.projectDir}/target/site/jacoco/cov.xml"))
-		html.destination(file("${rootProject.projectDir}/target/site/jacoco/html"))
 	}
 }
