@@ -23,6 +23,7 @@
   },
   "scripts": {
     "start": "serve",
+    "lint:html": "htmlhint *.html",
     "test-local-chrome": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/local-selenium-chrome.yml",
     "test-local-firefox": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/local-selenium-firefox.yml",
     "test-jenkins-chrome": "npx selenium-side-runner tests/test.side --output-directory=./tests/test-reports --config-file tests/jenkins-selenium-chrome.yml",
@@ -34,6 +35,7 @@
   },
   "devDependencies": {
     "chromedriver": "130.0.2",
+    "htmlhint": "1.1.4",
     "selenium-side-runner": "4.0.12"
   }
 }
