@@ -47,5 +47,6 @@ cov.xml
 /frontend/node_modules
 /frontend/tests/test-reports/*
 /frontend/tests/videos/*
+/frontend/.scannerwork
 
 

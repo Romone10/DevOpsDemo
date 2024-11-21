@@ -36,6 +36,7 @@
   "devDependencies": {
     "chromedriver": "130.0.2",
     "htmlhint": "1.1.4",
-    "selenium-side-runner": "4.0.12"
+    "selenium-side-runner": "4.0.12",
+    "sonar-scanner": "3.1.0"
   }
 }
