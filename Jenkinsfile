@@ -24,6 +24,10 @@ pipeline {
                 }
             }
         }
+        stage('Docker') {
+            sh 'export DOCKER_HOST=tcp://host.docker.internal:2375'
+            sh 'docker build -t mosazhaw/devopsdemo .'
+        }
         stage('Sonar') { 
             steps {
                 sh 'echo sonar'
