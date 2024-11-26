@@ -22,27 +22,24 @@ pipeline {
                         sh 'npm run lint:html'                    
                     }
                 }
-            }
-        }
-        stage('Docker') {
-            sh 'export DOCKER_HOST=tcp://host.docker.internal:2375'
-            sh 'docker build -t mosazhaw/devopsdemo .'
-        }
-        stage('Sonar') { 
-            steps {
-                sh 'echo sonar'
                 withCredentials([string(credentialsId: 'Sonarqube-Backend', variable: 'TOKEN')]) {
                     dir('backend') {
                         sh './gradlew sonar -Dsonar.projectKey=DevOpsDemo-Backend -Dsonar.projectName=\'DevOpsDemo-Backend\' -Dsonar.host.url=http://sonarqube:9000 -Dsonar.token=$TOKEN'    
                     }                    
                 }
                 withCredentials([string(credentialsId: 'Sonarqube-Frontend', variable: 'TOKEN')]) {
-                    dir('backend') {
+                    dir('frontend') {
                         nodejs('NodeJS 22.11.0') {
                             sh 'npx sonar-scanner -Dsonar.host.url=http://sonarqube:9000 -Dsonar.projectKey=DevOpsDemo-Frontend -Dsonar.projectName=\'DevOpsDemo-Frontend\' -Dsonar.token=$TOKEN'    
                         }
                     }                    
                 }
+            }
+        }
+        stage('Docker') {
+            steps {
+                sh 'export DOCKER_HOST=tcp://host.docker.internal:2375'
+                sh 'docker build -t mosazhaw/devopsdemo .'
             }
         }
     }
