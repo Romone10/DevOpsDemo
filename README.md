@@ -1,3 +1,3 @@
-# DevOps 04 DevOpsDemo
+# DevOps 03 DevOpsDemo
 
 ## Lernjournal
