@@ -6,7 +6,7 @@ services:
       - "8088:8080"
 
   chrome:
-    image: selenium/node-chrome:4.26.0-20241101
+    image: selenium/node-chromium:135.0.7049.52
     shm_size: 2gb
     depends_on:
       - selenium-hub
