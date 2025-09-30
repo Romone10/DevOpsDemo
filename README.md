@@ -1,3 +1,3 @@
-# DevOps 03 DevOpsDemo
+# DevOpsDemo
 
-## Lernjournal
+Sample project for DevOps Course.
