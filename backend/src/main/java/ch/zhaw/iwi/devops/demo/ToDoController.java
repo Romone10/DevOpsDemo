@@ -64,7 +64,7 @@ public class ToDoController {
     }
 
     @GetMapping("/services/todo/{key}")
-    public ToDo getTodo(@PathVariable Integer key) {
+    public ToDo getTodo(@PathVariable("key") Integer key) {
         return this.todos.get(key);
     }
 
@@ -75,14 +75,14 @@ public class ToDoController {
         this.todos.put(newId, todo);
     }
 
-    @PutMapping("/services/todo/{id}")
-    public void createTodo(@PathVariable Integer id, @RequestBody ToDo todo) {
-        todo.setId(id);
-        this.todos.put(id, todo);
+    @PutMapping("/services/todo/{key}")
+    public void createTodo(@PathVariable("key") Integer key, @RequestBody ToDo todo) {
+        todo.setId(key);
+        this.todos.put(key, todo);
     }
 
     @DeleteMapping("/services/todo/{key}")
-    public ToDo deleteTodo(@PathVariable Integer key) {
+    public ToDo deleteTodo(@PathVariable("key") Integer key) {
         return this.todos.remove(key);
     }
 

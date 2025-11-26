@@ -18,8 +18,8 @@
     "url": "https://github.com/devopszhaw/DevOps-04-DevOpsDemo.git"
   },
   "engines": {
-    "node": ">=22",
-    "npm": ">=10"
+    "node": ">=24",
+    "npm": ">=11"
   },
   "scripts": {
     "start": "serve",
