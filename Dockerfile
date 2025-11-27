@@ -3,7 +3,7 @@
 
 FROM eclipse-temurin:25-jdk-noble
 RUN apt-get update && apt-get install -y curl \
-  && curl -sL https://deb.nodesource.com/setup_20.x | bash - \
+  && curl -sL https://deb.nodesource.com/setup_24.x | bash - \
   && apt-get install -y nodejs \
   && curl -L https://www.npmjs.com/install.sh | npm_install="11.6.2" | sh
 RUN apt-get update && apt-get install -y python3.10
