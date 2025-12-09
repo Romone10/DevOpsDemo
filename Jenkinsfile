@@ -17,7 +17,7 @@ pipeline {
                     sh 'chmod +x ./gradlew'
                     sh './gradlew test'    
                 }
-                recordCoverage(tools: [jacocoAdapter()])
+                recordCoverage(tools: [[parser: 'JACOCO',pattern: '**/jacocoTestReport.xml']])
                 junit stdioRetention: '', testResults: '**/test-results/test/*.xml'
                 nodejs('NodeJS 24.11.1') {
                     dir('frontend') {
