@@ -17,7 +17,7 @@ pipeline {
                     sh 'chmod +x ./gradlew'
                     sh './gradlew test'    
                 }
-                jacoco()
+                recordCoverage(tools: [[]])
                 junit stdioRetention: '', testResults: '**/test-results/test/*.xml'
                 nodejs('NodeJS 22.11.0') {
                     dir('frontend') {
