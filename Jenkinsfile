@@ -19,7 +19,7 @@ pipeline {
                 }
                 recordCoverage(tools: [[parser: 'JACOCO',pattern: '**/jacocoTestReport.xml']])
                 junit stdioRetention: '', testResults: '**/test-results/test/*.xml'
-                nodejs('NodeJS 24.11.1') {
+                nodejs('24.11.1') {
                     dir('frontend') {
                         sh 'npm install'
                         sh 'npm run lint:html'                    
@@ -32,7 +32,7 @@ pipeline {
                 }
                 withCredentials([string(credentialsId: 'Sonarqube-Frontend', variable: 'TOKEN')]) {
                     dir('frontend') {
-                        nodejs('NodeJS 24.11.1') {
+                        nodejs('24.11.1') {
                             sh 'npx sonar-scanner -Dsonar.host.url=http://sonarqube:9000 -Dsonar.projectKey=DevOpsDemo-Frontend -Dsonar.projectName=\'DevOpsDemo-Frontend\' -Dsonar.token=$TOKEN'    
                         }
                     }                    
