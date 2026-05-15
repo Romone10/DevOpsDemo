@@ -7,8 +7,8 @@ pipeline {
 
         IMAGE_NAME = "gallomor/devopsdemo"
         CONTAINER_NAME = "devopsdemo"
-        HOST_PORT = "8088"
-        CONTAINER_PORT = "8080"
+        HOST_PORT = "3001"
+        CONTAINER_PORT = "3000"
     }
 
     stages {
