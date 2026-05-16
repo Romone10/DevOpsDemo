@@ -6,9 +6,9 @@ pipeline {
         DOCKER_HOST = "tcp://host.docker.internal:2375"
 
         IMAGE_NAME = "gallomor/devopsdemo"
-        CONTAINER_NAME = "devopsdemo"
+        CONTAINER_NAME = "gallomor-devopsdemo"
         HOST_PORT = "3001"
-        CONTAINER_PORT = "3000"
+        CONTAINER_PORT = "8080"
     }
 
     stages {
