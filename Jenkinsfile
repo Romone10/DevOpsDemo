@@ -70,23 +70,27 @@ pipeline {
                 '''
             }
         }
-        stage('Push Docker Image') {
+        stage('Docker Push') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'DockerHub-gallomor', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh '''
-                        docker login -u $USERNAME -p $PASSWORD
-                        docker push gallomor/devopsdemo:latest
-                    '''
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'DockerHub-gallomor', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                        sh '''
+                            export DOCKER_HOST=tcp://host.docker.internal:2375
+                            docker login -u $USERNAME -p $PASSWORD
+                            docker push gallomor/node-web-app
+                        '''
+                    }
                 }
             }
         }
-
         stage('Trigger Render Deployment') {
             steps {
-                withCredentials([string(credentialsId: 'RenderDeployKey', variable: 'KEY')]) {
-                    sh "curl https://api.render.com/deploy/$KEY"
+                script {
+                    withCredentials([string(credentialsId: 'RenderDeployKey', variable: 'KEY')]) {
+                        sh "curl https://api.render.com/deploy/$KEY"
+                    }
                 }
             }
-        }
+        }        
     }
 }
