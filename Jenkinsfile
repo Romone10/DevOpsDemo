@@ -70,5 +70,23 @@ pipeline {
                 '''
             }
         }
+        stage('Push Docker Image') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'DockerHub-gallomor', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh '''
+                        docker login -u $USERNAME -p $PASSWORD
+                        docker push gallomor/devopsdemo:latest
+                    '''
+                }
+            }
+        }
+
+        stage('Trigger Render Deployment') {
+            steps {
+                withCredentials([string(credentialsId: 'RenderDeployKey', variable: 'KEY')]) {
+                    sh "curl https://api.render.com/deploy/$KEY"
+                }
+            }
+        }
     }
 }
